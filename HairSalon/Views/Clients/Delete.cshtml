@@ -1,0 +1,20 @@
+@{
+  Layout = "_Layout";
+}
+
+@model HairSalon.Models.Client
+
+<h3>Are you sure you want to delete this client?</h3>
+<p>All deletions are permanant</p>
+
+<p>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</p> 
+<p>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</p>
+
+@using (Html.BeginForm())
+{
+  <input type="submit" value="Delete"/>
+}
+
+<button>@Html.ActionLink("Back to home", "Index", "Home")</button>
+<button>@Html.ActionLink("List of Stylists", "Index", "Stylists")</button>
+<button>@Html.ActionLink("List of Clients", "Index", "Clients")</button>
