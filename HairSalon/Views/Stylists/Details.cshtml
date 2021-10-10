@@ -1,0 +1,17 @@
+@{
+  Layout = "_Layout";
+}
+
+@model HairSalon.Models.Stylist
+
+<h2>Stylist Details:</h2>
+<br>
+
+<h3>Stylist Name: @Html.DisplayNameFor(model => model.Name)</h3>
+
+<h2>Clients:</h2>
+@foreach(var client in ViewBag.Clients)
+{
+  <li>@Html.ActionLink($"{client.Name}", "Details", "Clients", new { id = client.ClientId })</li>
+}
+
