@@ -9,12 +9,14 @@
 @if(@Model.Count == 0)
 {
   <p>There are currently no Stylists in the system.</p>
+  <button>@Html.ActionLink("Add a Stylist", "Create")</button>
 }
 
 <ul>
-  @foreach(Stylist stylist in Model)
+  @foreach(Stylist stylists in Model)
   {
-    <li>stylist.Name</li>
+    <li>@Html.ActionLink($"{stylists.Name}", "Details", new { id = stylists.Id })</li>
   }
-
 </ul>
+
+<button>@Html.ActionLink("Add a Stylist", "Create")</button>
